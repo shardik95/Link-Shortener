@@ -34,37 +34,38 @@ Alterative: you can also install all packages from [HomeBrew](https://brew.sh) f
 1. Change directory of terminal where the project has to be located.
 2. Clone the git repository using command: `git clone https://github.com/shardik95/Link-Shortener`
 3. `cd your-path/Link-Shortner` change to your path
-4. `cd server`
-5. `npm install`
-6. `npm start`
-7. Open a new tab in terminal to start client
-8. `cd ..`
-9. `cd client`
-10. `npm install`
-11. `npm start`
-12. open a new tab in terminal and change directory to where nginx is installed
+4. Start MongoDB in new tab: `sudo mongod`
+5. You can go to new tab and see the database. type `mongo`, then `show dbs`, then `use link-shortner` and `db.linkshortner.find().pretty()`
+6. `cd server`
+7. `npm install`
+8. `npm start`
+9. Open a new tab in terminal to start client
+10. `cd ..`
+11. `cd client/linkshortner/;`
+12. `npm install`
+13. `npm start`
+14. open a new tab in terminal and change directory to where nginx is installed
     In most case, it might be present at /usr/local/etc/nginx/
-13. `open nginx.conf`
-14.  save it following changes: `server {
+15. `open nginx.conf`
+16.  save it with following changes: `server {
         listen       80;
         server_name  localhost;
         location ~* "^/[0-9a-z@]{5,15}$"  {
     rewrite ^/(.*)$ http://localhost:4000/api/link/$1 redirect;
  }`
-15. Save and quit
-16. Start nginx `sudo nginx`
-17. If there's a problem try `sudo nginx -s quit` and `sudo nginx`
-18. Start MongoDB in new tab: `sudo mongod`
-19. You can go to new tab and see the database. type `mongo`, then `show dbs`, then `use link-shortner` and `db.linkshortner.find().pretty()`
+17. Save and quit
+18. Start nginx `sudo nginx`
+19. If there's a problem try `sudo nginx -s quit` and `sudo nginx`
+
 
 ## Working
 
-1. Go to browser and type http://localhost:3000 or whatever port your client is running own.
+1. Go to browser and type http://localhost:3000 or whatever port your client is running o n.
 2. Make sure your server is running by going to http://localhost:4000 where you can see 'Link Shortner'
 3. Type the Original Long link in client and press submit.
 4. You'll see a new shortened link.
 
 ## Demo
 
-
+![](https://gfycat.com/GoldenIdleGnu)
 
