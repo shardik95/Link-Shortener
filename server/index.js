@@ -13,6 +13,9 @@ app.get("/",function (req,res) {
     res.send("Hello World")
 })
 
+var service = require('./services/linkshortner.service.server')
+service(app)
+
 app.listen(process.env.PORT || 4000, function(){
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
