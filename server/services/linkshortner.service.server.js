@@ -8,9 +8,8 @@ module.exports = function (app) {
 
     function findLink(req,res) {
         var code = req.params.linkcode
-        console.log(code)
         return linkModel.findLinkCode(code)
-            .then(link=>res.send(link.longlink))
+            .then(link=>res.redirect(link.longlink))
 
     }
 
