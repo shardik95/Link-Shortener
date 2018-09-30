@@ -67,5 +67,5 @@ Alterative: you can also install all packages from [HomeBrew](https://brew.sh) f
 
 ## Demo
 
-![](https://gfycat.com/GoldenIdleGnu)
+[Imgur](https://i.imgur.com/0rdZJp3.gifv)
 
